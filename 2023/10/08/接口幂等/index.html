@@ -26,7 +26,7 @@
 <meta property="og:description" content="接口幂等性，在项目中怎么保证幂等性学习幂等性，了解什么是幂等性，以及在项目中有哪些方法可以保证幂等性。 1. 什么是幂等性？幂等性是指无论操作执行多少次，结果都是相同的 2. 什么是接口幂等性？指的是一个接口，使用相同参数重复执行的情况下，对数据造成的改变只发生一次，应用场景：前端未设置多次点击误触、多次点击付款等操作 3. 可能发生的场景在分布式框架中，存在网络通信，一个请求除了成功或失败以外">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-08T12:26:03.161Z">
-<meta property="article:modified_time" content="2023-10-08T13:19:19.645Z">
+<meta property="article:modified_time" content="2023-10-08T13:49:51.996Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -234,8 +234,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-10-08 21:19:19</span>
-            <span class="mobile">2023-10-08 21:19:19</span>
+            <span class="desktop">2023-10-08 21:49:51</span>
+            <span class="mobile">2023-10-08 21:49:51</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -289,7 +289,7 @@
 </blockquote>
 </li>
 </ul>
-<p>&#x3D;&#x3D;举例说明：例如，有一个购物系统，其中包括四种状态（未付款、已付款、已发货、已收货），当用户完成付款后，会从“未付款”状态转移到“已付款”状态。即使用户不小心多次点击“付款”按钮，系统也不会再从“未付款”状态转移到“已付款”状态，因为它已经处于“已付款”状态，从而实现系统的幂等性&#x3D;&#x3D;</p>
+<p><strong>举例说明：例如，有一个购物系统，其中包括四种状态（未付款、已付款、已发货、已收货），当用户完成付款后，会从“未付款”状态转移到“已付款”状态。即使用户不小心多次点击“付款”按钮，系统也不会再从“未付款”状态转移到“已付款”状态，因为它已经处于“已付款”状态，从而实现系统的幂等性</strong></p>
 
         </div>
 
@@ -304,7 +304,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2023-10-08 21:19:19
+                    :</strong> 2023-10-08 21:49:51
             </li>
         
         <li>
