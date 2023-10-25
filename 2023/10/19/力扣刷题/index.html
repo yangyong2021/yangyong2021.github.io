@@ -26,8 +26,9 @@
 <meta property="og:description" content="热题HOT100LC22括号生成数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。 示例 1： 12输入：n &#x3D; 3输出：[&quot;((()))&quot;,&quot;(()())&quot;,&quot;(())()&quot;,&quot;()(())&quot;,&quot;()()()&quot;]  示例 2： 12输入：n &#x3D; 1输出：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="c:\Users\49882\AppData\Roaming\Typora\typora-user-images\image-20231022111018869.png">
+<meta property="og:image" content="c:\Users\49882\AppData\Roaming\Typora\typora-user-images\image-20231023100947315.png">
 <meta property="article:published_time" content="2023-10-19T07:22:08.811Z">
-<meta property="article:modified_time" content="2023-10-22T03:24:31.936Z">
+<meta property="article:modified_time" content="2023-10-23T02:15:20.195Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="c:\Users\49882\AppData\Roaming\Typora\typora-user-images\image-20231022111018869.png">
@@ -224,7 +225,7 @@
                     <div class="author flex items-center">
                         <span class="name text-default-text-color text-lg font-semibold">orz yang</span>
                         
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
                         
                     </div>
                     <div class="meta-info">
@@ -238,8 +239,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-10-22 11:24:31</span>
-            <span class="mobile">2023-10-22 11:24:31</span>
+            <span class="desktop">2023-10-23 10:15:20</span>
+            <span class="mobile">2023-10-23 10:15:20</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -320,13 +321,13 @@
 <li>如果 <code>s</code> 中存在这样的子串，我们保证它是唯一的答案。</li>
 </ul>
 <p><strong>示例 1：</strong></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;ADOBECODEBANC&quot;, t = &quot;ABC&quot;</span><br><span class="line">输出：&quot;BANC&quot;</span><br><span class="line">解释：最小覆盖子串 &quot;BANC&quot; 包含来自字符串 t 的 &#x27;A&#x27;、&#x27;B&#x27; 和 &#x27;C&#x27;。</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：s = <span class="string">&quot;ADOBECODEBANC&quot;</span>, t = <span class="string">&quot;ABC&quot;</span></span><br><span class="line">输出：<span class="string">&quot;BANC&quot;</span></span><br><span class="line">解释：最小覆盖子串 <span class="string">&quot;BANC&quot;</span> 包含来自字符串 t 的 <span class="string">&#x27;A&#x27;</span>、<span class="string">&#x27;B&#x27;</span> 和 <span class="string">&#x27;C&#x27;</span>。</span><br></pre></td></tr></table></figure></div>
 
 <p><strong>示例 2：</strong></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;a&quot;, t = &quot;a&quot;</span><br><span class="line">输出：&quot;a&quot;</span><br><span class="line">解释：整个字符串 s 是最小覆盖子串。</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：s = <span class="string">&quot;a&quot;</span>, t = <span class="string">&quot;a&quot;</span></span><br><span class="line">输出：<span class="string">&quot;a&quot;</span></span><br><span class="line">解释：整个字符串 s 是最小覆盖子串。</span><br></pre></td></tr></table></figure></div>
 
 <p><strong>示例 3:</strong></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;a&quot;, t = &quot;aa&quot;</span><br><span class="line">输出: &quot;&quot;</span><br><span class="line">解释: t 中两个字符 &#x27;a&#x27; 均应包含在 s 的子串中，</span><br><span class="line">因此没有符合条件的子字符串，返回空字符串。</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: s = <span class="string">&quot;a&quot;</span>, t = <span class="string">&quot;aa&quot;</span></span><br><span class="line">输出: <span class="string">&quot;&quot;</span></span><br><span class="line">解释: t 中两个字符 <span class="string">&#x27;a&#x27;</span> 均应包含在 s 的子串中，</span><br><span class="line">因此没有符合条件的子字符串，返回空字符串。</span><br></pre></td></tr></table></figure></div>
 
 <p><strong>提示：</strong></p>
 <ul>
@@ -359,6 +360,30 @@
 <p><strong>解法：</strong>找到最左边最高的，和最右边最高的，能接住雨水的由最低的决定，则min(r_max, l_max) - 当前位置的高度，就是所接的雨水</p>
 <div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//leetcode submit region begin(Prohibit modification and deletion)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">trap</span><span class="params">(<span class="type">int</span>[] height)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> height.length;</span><br><span class="line">        <span class="type">int</span> [] l_max= <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">        <span class="type">int</span> [] r_max = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">        l_max[<span class="number">0</span>] = height[<span class="number">0</span>];</span><br><span class="line">        r_max[n-<span class="number">1</span>] = height[n-<span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 左边高的</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">            l_max[i] = Math.max(l_max[i-<span class="number">1</span>], height[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 右边高的</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> n-<span class="number">2</span>; i &gt;=<span class="number">0</span> ; i--) &#123;</span><br><span class="line">            r_max[i] = Math.max(r_max[i+<span class="number">1</span>],height[i]);</span><br><span class="line">        &#125;</span><br><span class="line">		<span class="comment">// 计算每个位置的雨水</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n-<span class="number">1</span>; i++) &#123;</span><br><span class="line">            sum += Math.min(l_max[i], r_max[i]) -height[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//leetcode submit region end(Prohibit modification and deletion)</span></span><br></pre></td></tr></table></figure></div>
 
+<h3 id="LC11盛最多水的容器"><a href="#LC11盛最多水的容器" class="headerlink" title="LC11盛最多水的容器"></a>LC11盛最多水的容器</h3><p>给定一个长度为 <code>n</code> 的整数数组 <code>height</code> 。有 <code>n</code> 条垂线，第 <code>i</code> 条线的两个端点是 <code>(i, 0)</code> 和 <code>(i, height[i])</code> 。</p>
+<p>找出其中的两条线，使得它们与 <code>x</code> 轴共同构成的容器可以容纳最多的水。</p>
+<p>返回容器可以储存的最大水量。</p>
+<p><strong>说明：</strong>你不能倾斜容器。</p>
+<p><strong>示例 1：</strong></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:\Users\49882\AppData\Roaming\Typora\typora-user-images\image-20231023100947315.png"
+                      alt="image-20231023100947315"
+                ></p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：[<span class="number">1</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">3</span>,<span class="number">7</span>]</span><br><span class="line">输出：<span class="number">49</span> </span><br><span class="line">解释：图中垂直线代表输入数组 [<span class="number">1</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">3</span>,<span class="number">7</span>]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 <span class="number">49</span>。</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>示例 2：</strong></p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：height = [<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">输出：<span class="number">1</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>n == height.length</code></li>
+<li><code>2 &lt;= n &lt;= 10^5</code></li>
+<li><code>0 &lt;= height[i] &lt;= 10^4</code></li>
+</ul>
+<p><strong>解法：</strong>双指针，盛水由最短的决定，找左右两边最短的乘以距离就是面积，收缩区间，小的那边往内收缩</p>
+<div class="highlight-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//leetcode submit region begin(Prohibit modification and deletion)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxArea</span><span class="params">(<span class="type">int</span>[] height)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">0</span>, l = <span class="number">0</span>, r = height.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; height.length; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">minH</span> <span class="operator">=</span> Math.min(height[l],height[r]);</span><br><span class="line">            ans = Math.max(ans, minH * (r - l));</span><br><span class="line">            <span class="keyword">if</span> (height[l] &lt; height[r])&#123;</span><br><span class="line">                l++;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                r--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//leetcode submit region end(Prohibit modification and deletion)</span></span><br></pre></td></tr></table></figure></div>
 
         </div>
 
@@ -373,7 +398,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2023-10-22 11:24:31
+                    :</strong> 2023-10-23 10:15:20
             </li>
         
         <li>
@@ -400,6 +425,21 @@
 
         
             <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/10/25/Springboot%E5%BE%AE%E6%9C%8D%E5%8A%A1/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">SpringBoot 微服务项目</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next">
@@ -474,7 +514,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">LeetCode</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%83%AD%E9%A2%98HOT100"><span class="nav-text">热题HOT100</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LC22%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90"><span class="nav-text">LC22括号生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LC5%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2"><span class="nav-text">LC5最长回文子串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LC3%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2"><span class="nav-text">LC3无重复字符的最长子串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LC76%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E5%AD%90%E4%B8%B2"><span class="nav-text">LC76最小覆盖子串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LC42%E6%8E%A5%E9%9B%A8%E6%B0%B4"><span class="nav-text">LC42接雨水</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%83%AD%E9%A2%98HOT100"><span class="nav-text">热题HOT100</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LC22%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90"><span class="nav-text">LC22括号生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LC5%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2"><span class="nav-text">LC5最长回文子串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LC3%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2"><span class="nav-text">LC3无重复字符的最长子串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LC76%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E5%AD%90%E4%B8%B2"><span class="nav-text">LC76最小覆盖子串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LC42%E6%8E%A5%E9%9B%A8%E6%B0%B4"><span class="nav-text">LC42接雨水</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LC11%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-text">LC11盛最多水的容器</span></a></li></ol></li></ol>
 
     </div>
 </div>
