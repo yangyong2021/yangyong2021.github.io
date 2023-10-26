@@ -285,12 +285,7 @@
 
 <h3 id="2-JDK-和JRE的区别是什么？"><a href="#2-JDK-和JRE的区别是什么？" class="headerlink" title="2. JDK 和JRE的区别是什么？"></a><code>2. JDK 和JRE的区别是什么？</code></h3><p><strong>JDK：</strong>JDK全称：Java Development Kit，是整个Java的核心，包含Java运行环境（JRE）和一系列Java开发工具完整的包。</p>
 <p><strong>JRE：</strong>JRE全称Java Runtime Environment，是Java程序的运行环境，包含JVM、Java核心库等。JRE只能用于运行Java程序，不能用于编译Java程序。JRE是JDK的子集。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="H:\JavaCode\Java学习书籍\images\JDK.jpg"
-                     
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="H:\JavaCode\Java学习书籍\images\JDK.jpg"></p>
 <h3 id="3-如何编译和运行Java文件"><a href="#3-如何编译和运行Java文件" class="headerlink" title="3. 如何编译和运行Java文件"></a><code>3. 如何编译和运行Java文件</code></h3><p>使用<code>javac</code>命令来编译.java文件</p>
 <blockquote>
 <p><code>javac</code> Test.java</p>
@@ -510,12 +505,7 @@
 <li>如果子类也定义了相同的静态方法和静态属性，父类相同的方法和属性会被隐藏。</li>
 </ul>
 <h3 id="17-Java的异常类有哪些？"><a href="#17-Java的异常类有哪些？" class="headerlink" title="17. Java的异常类有哪些？"></a><code>17. Java的异常类有哪些？</code></h3><p><strong>&#x3D;&#x3D;红色区域的异常表示是程序需要显示捕捉或者抛出的&#x3D;&#x3D;</strong></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="H:\JavaCode\Java学习书籍\images\Exception.jpg"
-                     
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="H:\JavaCode\Java学习书籍\images\Exception.jpg"></p>
 <p><strong>Throwable：</strong>是Java异常类的顶级类，所有的异常类都继承这个类，**<code>Error</code><strong>和</strong><code>Exception</code>**是异常类的两大分类。</p>
 <p><strong>Error：</strong>是非程序异常，即程序不能捕获的异常，一般是编译或者系统性错误，如**<code>OutOfMemorry</code>**内存溢出异常等。</p>
 <p><strong>Runtime Exception：</strong>运行时异常，Java编译器不会去检查它，及时没有try-catch和throws捕获或者抛出它，也会编译通过，但是运行不通过，常见的有**<code>NullPointException</code><strong>、</strong><code>ArrayIndexOutOfBoundsException</code><strong>、</strong><code>ArithmeticException</code>**等。</p>
@@ -616,12 +606,7 @@
 <li><code>Comparator</code>是比较器接口，可以创建多个<code>Comparator</code>接口的实现来实现自定义排序，相当于一个外部排序器。</li>
 </ul>
 <h3 id="4-List、Set、Map之间的区别是什么？"><a href="#4-List、Set、Map之间的区别是什么？" class="headerlink" title="4. List、Set、Map之间的区别是什么？"></a><code>4. List、Set、Map之间的区别是什么？</code></h3><p>它们的区别主要体现在数据结构、元素是否有序、元素是否可重复、键值是否为null等。三个接口的思维导图如下：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="H:\JavaCode\Java学习书籍\images\集合框架2.png"
-                     
-                ></p>
+<p><img lazyload src="/images/loading.svg" data-src="H:\JavaCode\Java学习书籍\images\集合框架2.png"></p>
 <h3 id="5-HashMap和HashTable的区别？"><a href="#5-HashMap和HashTable的区别？" class="headerlink" title="5. HashMap和HashTable的区别？"></a><code>5. HashMap和HashTable的区别？</code></h3><p>HashMap线程不安全，HashTable线程安全。</p>
 <p>HashMap性能优于HashTable，因为HashTable加锁导致阻塞。&#x3D;&#x3D;如果保证线程安全又性能好，建议使用JUC包下的ConcurrentHashMap&#x3D;&#x3D;</p>
 <p>HashMap的键值都可以为null，HashTable的键值不能为null，具体如源码所示：</p>
