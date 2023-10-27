@@ -1,7 +1,295 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Yangyong ORZ</title><meta name="author" content="Yangyong ORZ"><meta name="copyright" content="Yangyong ORZ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="给大佬们下跪">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yangyong ORZ">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Yangyong ORZ">
+<meta property="og:description" content="给大佬们下跪">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/avatar.jpg">
+<meta property="article:author" content="Yangyong ORZ">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Yangyong ORZ',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-10-27 21:16:50'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/background.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Yangyong ORZ"><span class="site-name">Yangyong ORZ</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Yangyong ORZ</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/1374797851@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/26/Nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" title="Nacos安装指南">Nacos安装指南</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-26T03:41:48.858Z" title="发表于 2023-10-26 11:41:48">2023-10-26</time></span></div><div class="content">1.Windows安装开发阶段采用单机安装即可。
+1.1.下载安装包在Nacos的GitHub页面，提供有下载链接，可以下载编译好的Nacos服务端或者源代码：
+GitHub主页：https://github.com/alibaba/nacos
+GitHub的Release下载页：https://github.com/alibaba/nacos/releases
+如图：
+
+本课程采用1.4.1.版本的Nacos，课前资料已经准备了安装包：
+
+windows版本使用nacos-server-1.4.1.zip包即可。
+1.2.解压将这个包解压到任意非中文目录下，如图：
+
+目录说明：
+
+bin：启动脚本
+conf：配置文件
+
+1.3.端口配置Nacos的默认端口是8848，如果你电脑上的其它进程占用了8848端口，请先尝试关闭该进程。
+如果无法关闭占用8848端口的进程，也可以进入nacos的conf目录，修改配置文件中的端口：
+
+修改其中的内容：
+
+1.4.启动启动非常简单，进入bin目录，结构如下：
+
+然后执行命令即可：
+
+windows命令：
+startup.cmd -m stand ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/25/Springboot%E5%BE%AE%E6%9C%8D%E5%8A%A1/" title="SpringBoot 微服务项目">SpringBoot 微服务项目</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-25T02:30:33.241Z" title="发表于 2023-10-25 10:30:33">2023-10-25</time></span></div><div class="content">回顾将本地非空项目和远程新建仓库相关联，首先进入到本地项目文件夹
+// 初始化git init// 重新路由 git remote add origin https://github.com/yangyong2021/springcloud_demo.git// 添加到本地仓库git add .// 提交git commit -m &#x27;描述信息&#x27;// 推送到远程仓库git push origin master
+
+1. 跨服务远程调用使用RestTemplate注册远程调用
+1.1 在配置类中添加RestTemplate
+需要在启动类上添加@ServletComponentScan
+
+@Beanpublic RestTemplate restTemplate()&#123;    return new RestTemplate();&#125;
+
+1.2 使用RestTemplate发送http请求@GetMapping(&quot;&#123;orderId&#125;&quot;)public Order getOrderById(@PathVariable(&qu ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/19/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/" title="LeetCode">LeetCode</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-19T07:22:08.811Z" title="发表于 2023-10-19 15:22:08">2023-10-19</time></span></div><div class="content">热题HOT100LC22括号生成数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。
+示例 1：
+输入：n = 3输出：[&quot;((()))&quot;,&quot;(()())&quot;,&quot;(())()&quot;,&quot;()(())&quot;,&quot;()()()&quot;]
+
+示例 2：
+输入：n = 1输出：[&quot;()&quot;]
+
+提示：
+
+1 &lt;= n &lt;= 8
+
+解法：
+import java.util.ArrayList;import java.util.List;//leetcode submit region begin(Prohibit modification and deletion)class Solution &#123;    private List&lt;String&gt; ans = new ArrayList&lt;&gt;();    StringBuffer sb = new StringBuffer();    public List&lt;S ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/08/%E6%8E%A5%E5%8F%A3%E5%B9%82%E7%AD%89/" title="接口幂等性，在项目中怎么保证幂等性">接口幂等性，在项目中怎么保证幂等性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-08T12:26:03.161Z" title="发表于 2023-10-08 20:26:03">2023-10-08</time></span></div><div class="content">学习幂等性，了解什么是幂等性，以及在项目中有哪些方法可以保证幂等性。
+1. 什么是幂等性？幂等性是指无论操作执行多少次，结果都是相同的
+2. 什么是接口幂等性？指的是一个接口，使用相同参数重复执行的情况下，对数据造成的改变只发生一次，应用场景：前端未设置多次点击误触、多次点击付款等操作
+3. 可能发生的场景在分布式框架中，存在网络通信，一个请求除了成功或失败以外，还额外多了一个未知状态。
+即：如果一次远程接口调用失败，有可能这个请求在服务端已经被执行，但是客户端并没得到执行结果，客户端为了确保这个请求执行成功，可能会发起重试请求的操作，这就会导致一个接口被重复调用。
+以上则需要在服务端的接口中取识别当前请求是否是重试请求，从而不再进行数据的变更操作。
+4. 常见的解决方案如下
+数据库唯一索引：专门创建一个请求消息表，请求消息设为唯一索引，每次收到请求消息后生成MD5值插入到请求消息表中，只要出现重复的，抛出异常，可以捕获异常来避免重复对数据变更。
+
+MD5：是一种密码散列函数，可以将任意长度的数据映射到一个固定长度的散列值，通常以32位的十六进制数表示。
+
+使用MD5可以节省空间
+可以 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/23/Java%E9%9D%A2%E8%AF%95/" title="Java基础知识">Java基础知识</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-23T05:44:05.934Z" title="发表于 2023-09-23 13:44:05">2023-09-23</time></span></div><div class="content">Java面试一、基础1. 面向对象编程有哪些特征?抽象：抽象是对同一个目标的共有的属性（特征）和方法（功能&#x2F;行为）进行抽取、归纳、总结。所以抽象不是了解和解决全部问题，而是选择公共部分，忽略一个主题中与当前目标无关的那些方面。
+封装：封装就是隐藏对象的属性和实施细节，控制成员属性的访问和修改权限，通过特定公开的方法暴露给外面访问。比如以下代码：
+private String name = &quot;Yangyong test&quot;;public String getName()&#123;    return name;&#125;
+
+name属性被封装起来，只能通过对象的getName()方法才能访问。
+继承：继承就是指子类继承父类的成员和方法，使得子类也能具有父类相同的行为。 
+
+&#x3D;&#x3D;Java类之间只能实现单继承，接口之间可以实现多继承&#x3D;&#x3D;
+
+多态：多态是指同一个行为具有多个不同的表现形式或形态，如一个类的方法在不同的情况有不同的表现形式。
+
+&#x3D;&#x3D;比如方法重写：子类可以重写父类的方法，通过父类引用变量调用 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/22/%E5%9F%BA%E7%A1%80%E7%AF%87-%E6%8E%92%E5%BA%8F/" title="常见的排序和查找算法，持续更新中...">常见的排序和查找算法，持续更新中...</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-22T08:20:44.887Z" title="发表于 2023-09-22 16:20:44">2023-09-22</time></span></div><div class="content">二分查找、冒泡排序、选择排序、插入排序、归并排序、快排
+基础篇1. 二分查找public int binarySearch(int [] nums, int target)&#123;    int l = 0, h= nums.length -1;    while(l &lt; h)&#123;        int m = l + (h - l) / 2;        // 位运算 int m = (h + l) &gt;&gt;&gt; 1;        if(nums[m] == target) return m;        if(nums[m] &gt; target) h = m - 1;        if(nums[m] &lt; target) l = m + 1;    &#125;    return -1;&#125;
+
+2. 冒泡排序public void swap(int []nums, int i, int j)&#123;    int tmp = nums[i];    nums[i] = nums[j];    nums[j] = tmp; ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/22/hexo+github%E6%95%99%E7%A8%8B/" title="hexo+github教程">hexo+github教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-22T06:50:23.670Z" title="发表于 2023-09-22 14:50:23">2023-09-22</time></span></div><div class="content">此教程详细介绍了hexo的安装步骤
+1. git+nodeN. hexo图片显示问题
+修改hexo下的_config.yml文件：
+将 post_asset_folder: false 修改为 post_asset_folder: true。
+
+安装图片路径的插件：
+npm install https://github.com/7ym0n/hexo-asset-image --save
+
+如果使用以下命令安装插件，则需要修改**&#x2F;node_modules&#x2F;hexo-asset-image&#x2F;index.js**：
+npm install https://github.com/CodeFalling/hexo-asset-image --save
+
+具体的js修改为：
+&#x27;use strict&#x27;;var cheerio = require(&#x27;cheerio&#x27;);// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a- ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/22/java%E5%A4%8D%E4%B9%A0%E8%B5%84%E6%96%99/" title="Java 八股">Java 八股</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-22T06:25:35.704Z" title="发表于 2023-09-22 14:25:35">2023-09-22</time></span></div><div class="content">主要介绍了一些Java面试过程中的八股文。
+JUC1. 为什么说重入锁是粒度更小的锁？
+2. 可重入锁代码示例import java.util.concurrent.locks.ReentrantLock;public class ReentrantLockExample &#123;    private final ReentrantLock lock = new ReentrantLock();    public void performTask() &#123;        lock.lock(); // 第一次获取重入锁        try &#123;            System.out.println(Thread.currentThread().getName() + &quot; acquired the lock.&quot;);            Thread.sleep(1000);            // 在这里执行需要保护的临界区代码            // ...            // 调用另一个方法，再次获取同一个重入锁  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/09/22/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-22T05:17:36.481Z" title="发表于 2023-09-22 13:17:36">2023-09-22</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+Run server$ hexo server
+
+More info: Server
+Generate static files$ hexo generate
+
+More info: Generating
+Deploy to remote sites$ hexo deploy
+
+More info: Deployment
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Yangyong ORZ</div><div class="author-info__description">This is my Blog</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="/1374797851@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/26/Nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" title="Nacos安装指南">Nacos安装指南</a><time datetime="2023-10-26T03:41:48.858Z" title="发表于 2023-10-26 11:41:48">2023-10-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/25/Springboot%E5%BE%AE%E6%9C%8D%E5%8A%A1/" title="SpringBoot 微服务项目">SpringBoot 微服务项目</a><time datetime="2023-10-25T02:30:33.241Z" title="发表于 2023-10-25 10:30:33">2023-10-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/19/%E5%8A%9B%E6%89%A3%E5%88%B7%E9%A2%98/" title="LeetCode">LeetCode</a><time datetime="2023-10-19T07:22:08.811Z" title="发表于 2023-10-19 15:22:08">2023-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/08/%E6%8E%A5%E5%8F%A3%E5%B9%82%E7%AD%89/" title="接口幂等性，在项目中怎么保证幂等性">接口幂等性，在项目中怎么保证幂等性</a><time datetime="2023-10-08T12:26:03.161Z" title="发表于 2023-10-08 20:26:03">2023-10-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/23/Java%E9%9D%A2%E8%AF%95/" title="Java基础知识">Java基础知识</a><time datetime="2023-09-23T05:44:05.934Z" title="发表于 2023-09-23 13:44:05">2023-09-23</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">5</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">9</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">15.5k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-10-27T13:16:49.901Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/background.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Yangyong ORZ</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["你在抱怨什么呢","为明天到来的事，说人生像是没有意义","没有选择会是唯一的路","这不是你自己的问题，人终归要好好去生活"])
+  } else {
+    document.getElementById("subtitle").textContent = "你在抱怨什么呢"
+  }
+}
+typedJSFn.run(subtitleType)</script></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="富强,民主,文明,和谐,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(a){a.imageLazyLoadSetting.processImages=t;var i=a.imageLazyLoadSetting.isSPA,o=a.imageLazyLoadSetting.preloadRatio||1,r=c();function c(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){i&&(r=c());for(var t,e,n=0;n<r.length;n++)t=r[n],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(a.innerHeight*o||document.documentElement.clientHeight*o)&&function(){var e=r[n];!function(t,e){if(t.hasAttribute("bg-lazy"))return t.removeAttribute("bg-lazy"),e&&e();var n=new Image,a=t.getAttribute("data-original");n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a)}(e,function(){r=r.filter(function(t){return e!==t}),a.imageLazyLoadSetting.onImageLoaded&&a.imageLazyLoadSetting.onImageLoaded(e)})}()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),a.addEventListener("resize",e),a.addEventListener("orientationchange",e)}(this);</script></body></html>
